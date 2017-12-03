@@ -10,7 +10,7 @@ It must be installed:
 
 Installation:
 
-1. git clone https://github.com/ljalarcon08/crypto_money_chart_MEAN.git
+1. git clone https://github.com/ljalarcon08/news_feed.git
 2. Accedera a folder node-news-feed.
 3. Run npm install
 4. Run npm start
