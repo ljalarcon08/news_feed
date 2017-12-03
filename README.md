@@ -11,7 +11,7 @@ It must be installed:
 Installation:
 
 1. git clone https://github.com/ljalarcon08/news_feed.git
-2. Accedera a folder node-news-feed.
+2. Access node-news-feed folder.
 3. Run npm install
 4. Run npm start
 5. From browser access to http: // localhost: 3000
