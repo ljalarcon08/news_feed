@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div.top.jumbotron.jumbotron-fluid
+    h1#title HN Feed
+    h4#subtitle We <3 hacker news!
+  div.container
+    table#feed.table.table-condensed.table-responsive
+      tbody
+          each row in data
+            tr.row
+              td(class=(row.url?"clickable-row":false) data-href=(row.url?row.url:false))
+                div#hightd #{row.title} 
+                div#lowtd - #{row.author} -
+              td(id="hightime" class=(row.url?"clickable-row time":"time") data-href=(row.url?row.url:false) data-value=`${row.create_at.getTime()}`) #{row.create_at}
+              td
+                input.delete(type="image" src="images/trashBin.png" data-value=`${row.create_at.getTime()}`)
+              //td
+                //button.delete(data-value=`${row.create_at.getTime()}`)
+                  //img(src="images/trashBin.png")
+    div.nopad.text-center
+      ul#pages.pagination
+        -var i=1
+        -var power8=0
+        while power8<=count
+          if i==1
+            li.active
+              a(id=`${i}`)  #{i}
+              ///a(id=`${i}` href=`/page/${i}/8`)  #{i}
+          else
+            li
+              a(id=`${i}`)  #{i}
+          -i=i+1
+          -power8=i*8
+        if count>8 && count%8!=0
+          li
+            a(id=`${i}`)  #{i}
+
